@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
-from helpers import Tree,saludar,open_youtube,open_google
+from helpers import Tree,saludar,open_youtube,open_google,play,pause,previous,next
 from helpers import saludar
 
 # Inicializar el árbol de comandos
@@ -16,6 +16,11 @@ tree = Tree()
 tree.insert("open youtube", open_youtube)
 tree.insert("open google", open_google)
 tree.insert("hi", saludar)
+tree.insert("play", play)
+tree.insert("pause", pause)
+tree.insert("next", next)
+tree.insert("previous", previous)
+
 
 # Inicializar el motor de síntesis de voz
 engine = pyttsx3.init()
@@ -37,7 +42,7 @@ while True:
         print(f"Has dicho: {text}")
 
         # Si el usuario dice "hey josh", escuchar la siguiente instrucción
-        if "hey josh" in text.lower():
+        if "hello" in text.lower():
             print("Sí, ¿qué necesitas?")
             with sr.Microphone() as source:
                 audio = r.listen(source)

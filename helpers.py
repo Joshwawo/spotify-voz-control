@@ -57,3 +57,21 @@ def open_backend():
 
 def subir_volumen():
     print("Subiendo volumen...")
+
+def play():
+    webbrowser.open("http://localhost:3004/play")
+    print("Reproduciendo...")
+
+def pause():
+    webbrowser.open("http://localhost:3004/pause")
+    print("Pausando...")
+
+def next():
+    webbrowser.open("http://localhost:3004/next")
+    print("Siguiente...")
+
+def previous():
+    webbrowser.open("http://localhost:3004/previous")
+    print("Anterior...")
+
+
